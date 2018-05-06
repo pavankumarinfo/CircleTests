@@ -1,0 +1,31 @@
+C:\Trainings\Sample Selenium\GmailLoginTest\Test_Sellers_App_Store\bin\Debug\Test_Sellers_App_Store.exe.config
+C:\Trainings\Sample Selenium\GmailLoginTest\Test_Sellers_App_Store\obj\Debug\Test_Sellers_App_Store.exe
+C:\Trainings\Sample Selenium\GmailLoginTest\Test_Sellers_App_Store\obj\Debug\Test_Sellers_App_Store.pdb
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\Test_Sellers_App_Store.exe.config
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\obj\Debug\Test_Sellers_App_Store.exe
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\obj\Debug\Test_Sellers_App_Store.pdb
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\obj\Debug\GmailSeleniumTestScripts.csprojResolveAssemblyReference.cache
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\Test_Sellers_App_Store.exe
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\Test_Sellers_App_Store.pdb
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\nunit.framework.dll
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\WebDriver.dll
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\WebDriver.Support.dll
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\nunit.framework.xml
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\WebDriver.xml
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\WebDriver.Support.xml
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Trainings\Sample Selenium\GmailLoginTest\TestScripts\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\Test_Sellers_App_Store.exe.config
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\obj\Debug\Test_Sellers_App_Store.exe
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\obj\Debug\Test_Sellers_App_Store.pdb
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\Test_Sellers_App_Store.exe
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\Test_Sellers_App_Store.pdb
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\nunit.framework.dll
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\WebDriver.dll
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\WebDriver.Support.dll
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\nunit.framework.xml
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\WebDriver.xml
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\bin\Debug\WebDriver.Support.xml
+C:\Pavan\Trainings\Selenium Courses\Programs Lessons\Class1_GmailLoginTest\TestScripts\obj\Debug\GmailSeleniumTestScripts.csprojResolveAssemblyReference.cache
