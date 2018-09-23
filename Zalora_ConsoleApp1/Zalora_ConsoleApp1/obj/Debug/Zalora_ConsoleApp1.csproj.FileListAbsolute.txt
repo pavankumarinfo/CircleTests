@@ -1,0 +1,7 @@
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\bin\Debug\Zalora_ConsoleApp1.exe.config
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\bin\Debug\Zalora_ConsoleApp1.exe
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\bin\Debug\Zalora_ConsoleApp1.pdb
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\obj\Debug\Zalora_ConsoleApp1.csprojAssemblyReference.cache
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\obj\Debug\Zalora_ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\obj\Debug\Zalora_ConsoleApp1.exe
+C:\Pavan\personal\singapore\Zalora\Zalora_ConsoleApp1\Zalora_ConsoleApp1\obj\Debug\Zalora_ConsoleApp1.pdb
