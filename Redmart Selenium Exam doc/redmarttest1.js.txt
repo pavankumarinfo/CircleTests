@@ -1,0 +1,243 @@
+ 
+ // Export protractor to the global namespace to be used in tests.
+ global.protractor = protractor;
+ global.browser = browser;
+ global.$ = browser.$;
+ global.$$ = browser.$$;
+ global.element = browser.element;
+ global.dv = browser.driver;
+
+    beforeEach(function() {
+        browser.waitForAngularEnabled(false);
+        browser.ignoreSynchronization = true;;
+    });
+
+describe('angularjs homepage todo list', function(){
+   global.dv = browser.driver;
+
+   it(' Step 1: Home page', function() {
+        console.log("Step 1: Home page");
+        navigateToRedmartSite();
+        browsersleep(4000);        
+    });   
+
+    it(' A. Sign up.',function(){
+        console.log("Step 2: SignUp flow");
+        var loginname="test5test";
+        var loginmail=loginname+"@gmail.com";
+        console.log("username : "+loginmail);
+        signUpPage(loginmail);
+        logout();
+    });
+
+    it(' Step 3: Login flow', function(){
+        console.log("B.    Login");        
+        loginPage("test5test@gmail.com","abc123456");        
+        browsersleep(4000);
+        console.log("Login Successful");
+    });
+
+    it(' C.    Add three items from each of the following 3 categories to cart: Marketplace, On Sale and Fresh Produce.',function(){
+        console.log("Step 4: Add three items for each categories to cart.");
+        afterLoginsearchItem("MarketPlace");
+        addItemToCart();
+        afterLoginsearchItem("On Sale");
+        addItemToCart();
+        afterLoginsearchItem("Fresh");
+       addItemToCart();
+    });
+
+    it('D.   Go to the cart and remove the second item from the top.',function(){
+        console.log(" Step 5: Remove 2nd item.");
+        navigateToCartPageandRemoveItem(); //favourite item number+1
+    });
+   
+    it('E. Proceed to checkout by adding an address.',function(){
+        browser.ignoreSynchronization = true;
+        console.log(" Step 6: Proceed for checkout and create new address ");
+        browser.get("https://redmart.com/cart/checkout/address");
+        checkOutFlow();
+    });
+
+    it(' Step 7: Proceed to Logout',function(){
+        logout();
+    });
+
+    it(' Step 8: End process of protractor',function(){
+        console.log(" Step 8: End process of protractor")
+        process.exit(1);        
+    });
+});
+
+//Common Methods
+  
+function browsersleep(value)
+{
+  browser.sleep(value);
+}
+
+function navigateToRedmartSite()
+{ 
+   browser.get('http://redmart.com');
+   browser.driver.manage().window().maximize();
+   browsersleep(4000);
+}
+
+function beforeLoginsearchItem(searchtext)
+{
+    browser.ignoreSynchronization = true;
+    console.log("searching Item");
+    browsersleep(2000);
+    var browsersearchbox = browser.element.all(by.css('input[class=SearchInputBox__input___2ZwUc]'));
+    browsersearchbox.get(0).sendKeys(searchtext);
+    browsersleep(2000);
+}
+
+function afterLoginsearchItem(searchtext)
+{
+    browser.ignoreSynchronization = true;
+    console.log("searching Item");
+    //browsersleep(2000);
+    browser.element(by.css('input[class=SearchInputBox__input___2ZwUc]')).sendKeys(searchtext);;
+    browsersleep(2000);
+    browser.element(by.css('button[class=SearchInputBox__button___1sNM_]')).click();
+    browsersleep(2000);    
+}
+
+function addItemToCart()
+{
+    browser.ignoreSynchronization = true;
+    console.log("adding item to cart");
+    browsersleep(2000);
+
+    //get item text and create url for it
+    var parentelements=browser.element.all(by.css('div[class="productDescriptionAndPrice"]')); 
+    var item = parentelements.get(0);
+    var anchorElement = item.element(by.tagName('h4')).element(by.tagName('a'));
+    anchorElement.getAttribute("href").then(function(hrefValue){
+        browser.get(hrefValue);
+    })  
+    browsersleep(2000);
+    var itemtoCart=browser.element.all(by.css('a[class="AtcButton__container___1RZ9c AtcButton__with_text___4C5OY"]'));
+    
+    //remove 2nd item
+    itemtoCart.get(0).click();
+      
+    browsersleep(2000);
+    browser.get("http://redmart.com");
+}
+
+function signUpPage(loginname)
+{
+    browser.ignoreSynchronization = true;
+    console.log("signUp of new account");
+    browsersleep(2000);    
+    //login page
+    browser.element(by.css('a[id="NAVBAR_SIGNUP_BTN"]')).click()
+
+    browsersleep(2000);
+    //signUp email id
+    browser.element(by.css('div[class="Auth__email_field___12IqZ"]')).element(by.css('input[class="Input__input___35fv6"]')).sendKeys(loginname);
+
+    //first password
+    browser.element(by.css('div[class="Auth__password_field___dhYd9"]')).element(by.css('input[class="Input__input___35fv6"]')).sendKeys("abc123456");
+
+    //confirm password
+    browser.element(by.css('div[class="Auth__password_confirm_field___1VE2D"]')).element(by.css('input[class="Input__input___35fv6"]')).sendKeys("abc123456");
+
+    //signUp button
+    element(by.css('div[class="Button__button___1-iVe Button__primary___1R0WH"]')).click()
+
+    //Assert account page is created.
+     var loginUserElement = element(by.css('div[id="accountPreview"]'));
+     expect(loginUserElement.isPresent());
+}
+
+function loginPage(userid,pwd)
+{
+    browser.ignoreSynchronization = true;
+    browsersleep(4000);
+    //login page
+    browser.element(by.css('a[id="NAVBAR_SIGNIN_BTN"]')).click()
+
+    //login id : email
+    browser.element(by.css('input[name="email"]')).sendKeys(userid);
+    //login password : password
+    element(by.css('input[name="password"]')).sendKeys(pwd);
+
+    //login button
+    element(by.css('[class="Button__button___1-iVe Button__primary___1R0WH"]')).click()
+
+    browsersleep(2000);
+    //assert
+    var loginUserElement = element(by.css('div[id="accountPreview"]'));
+    expect(loginUserElement.isPresent()); 
+}
+
+function navigateToCartPageandRemoveItem()
+{
+    browser.ignoreSynchronization = true;
+    //cart page open
+    element(by.css('[id="cartPreviewInner"]')).click();
+    browsersleep(2000);
+    var countremove = browser.element.all(by.css('button[class="remove"]'));
+
+    //countremove.count().then(function(Index){var chartItemsCount = Index; console.log("items in cart : "+chartItemsCount);  });
+
+    countremove.get(0).click();
+    browsersleep(2000);    
+}
+
+function logout()
+{
+    console.log("Step 7: Proceed to Logout")
+    var loginUserElement = element(by.css('div[id="accountPreview"]'));
+    browser.actions().mouseDown(loginUserElement).perform();
+    browsersleep(3000);
+    var logoutbutton = element(by.css('a[id="NAVBAR_SIGNOUT_BTN"]'));
+    browsersleep(2000);
+    logoutbutton.click();
+}
+function checkOutFlow()
+{ 
+    console.log("cart page open");
+    browsersleep(2000);
+ 
+    console.log("navigating to checkout address page.");
+    browser.get("https://redmart.com/cart/checkout/address");
+
+    browsersleep(2000);
+    console.log("create new address:");
+    browser.element(by.css('a[class="addBtn editMode"]')).click();
+    browsersleep(2000);
+    browser.element(by.css('input[name="addressSearch"]')).sendKeys("6 Fishery Port Road 619747"); //619747
+    browsersleep(2000);
+    browser.element(by.css('a[class="button selectSearchedAddress"]')).click();
+
+   browsersleep(2000);
+   console.log("filling firstname and 2nd name");
+   browser.element(by.css('input[id="ADDRESS_WIZARD_FIRST_NAME"]')).sendKeys("test2test");
+   browser.element(by.css('input[id="ADDRESS_WIZARD_LAST_NAME"]')).sendKeys("test2test");
+   browsersleep(2000);
+   console.log("save button");
+   var savebutton = browser.element(by.css('a[class="button saveSearchedAddress"]'));
+   if(savebutton.isPresent())
+   {
+       savebutton.getText.then(function(value){console.log("savebutton value : "+value);});
+       savebutton.click();
+    }
+    else
+    {
+        console.log("save button not yet ready");
+    }
+   browsersleep(2000);
+   console.log("Edit address");
+   browser.element(by.css('button[class="editMode editBtn"]')).click();
+   console.log("filling floor and unit");
+   browsersleep(2000);
+   browser.element(by.css('input[name="floor"]')).sendKeys("7");
+   browser.element(by.css('input[name="unit_number"]')).sendKeys("1");
+   browsersleep(2000);
+   console.log("save button");
+   browser.element(by.css('button[class="button closeEditMode"]')).click();
+}
